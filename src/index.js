@@ -12,7 +12,8 @@ app.use(morgan('combined'));
 // template engine
 app.engine('handlebars', exphbs.engine);
 app.set('view engine', 'handlebars');
-// app.set('views', './views');
+
+// path
 app.set('views', path.join(__dirname, 'resources/views'));
 
 const port = 3000
