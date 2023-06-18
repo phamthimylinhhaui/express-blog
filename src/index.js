@@ -1,6 +1,8 @@
+const { log } = require('console');
 const express = require('express');
 const morgan = require('morgan');
 const exphbs = require('express-handlebars').create();
+const path = require('path');
 
 const app = express();
 
@@ -10,7 +12,8 @@ app.use(morgan('combined'));
 // template engine
 app.engine('handlebars', exphbs.engine);
 app.set('view engine', 'handlebars');
-app.set('views', './views');
+// app.set('views', './views');
+app.set('views', path.join(__dirname, 'resources/views'));
 
 const port = 3000
 
