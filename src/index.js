@@ -6,6 +6,9 @@ const path = require('path');
 
 const app = express();
 
+// static public
+app.use(express.static(path.join(__dirname, 'public')));
+
 // http logger
 app.use(morgan('combined'));
 
