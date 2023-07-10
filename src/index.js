@@ -3,7 +3,6 @@ const express = require('express');
 const morgan = require('morgan');
 const exphbs = require('express-handlebars').create();
 const path = require('path');
-
 const app = express();
 
 // static public
@@ -21,9 +20,9 @@ app.set('views', path.join(__dirname, 'resources/views'));
 
 const port = 3000
 
-app.get('/', (req, res) => {
-  res.render('home')
-})
+//route init
+const route = require('./routes');
+route(app);
 
 app.listen(port, () => {
   console.log(`Example app listening on port ${port}`)
